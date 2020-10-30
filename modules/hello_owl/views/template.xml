@@ -2,8 +2,12 @@
 
         <template id="index">
             <script type="text/javascript" src="/hello_owl/static/src/js/hello.js"></script>
-            <title>Academy</title>
-            <h1>Hello</h1>
+
+            <div t-name="App" class="main">
+                <title>Getting Started</title>
+                <h1>Hello OWL!</h1>
+            </div>
+
         </template>
 
 </odoo>
