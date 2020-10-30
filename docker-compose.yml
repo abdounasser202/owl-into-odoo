@@ -1,0 +1,23 @@
+version: "3"
+services:
+  odoo:
+    container_name: o14_src
+    image: odoo:14.0
+    ports:
+      - "8069:8069"
+    volumes:
+      - ./modules:/mnt/extra-addons/
+      - ./odoo_conf:/etc/odoo
+    depends_on:
+      - db
+    tty: true
+
+  db:
+    container_name: o14_db
+    image: postgres:12.0
+    environment:
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - "5433:5432"
